@@ -7,6 +7,5 @@ build/
 .env
 backend/package-lock.json
 frontend/package-lock.json
-frontend/build
 frontend/.env
 backend/.env
