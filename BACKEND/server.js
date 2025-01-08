@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve the React build folder
-const buildPath = path.join(__dirname, '../frontend', 'build'); // Path updated for frontend/build
+const buildPath = path.join(__dirname, '../FRONTEND', 'build'); // Path updated for frontend/build
 app.use(express.static(buildPath));
 
 // Routes
