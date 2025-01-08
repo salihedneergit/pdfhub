@@ -354,7 +354,7 @@ const Index = () => {
                 <motion.button
                   onClick={() =>
                     (window.location.href =
-                      "http://localhost:3001/auth/sign-in")
+                      "http://13.51.106.41:3001/auth/sign-in")
                   }
                   className="text-black relative z-0 flex items-center space-x-2 rounded-xl px-20 py-3"
                   whileHover={{ scale: 1.02 }}

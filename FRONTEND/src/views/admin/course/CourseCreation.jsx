@@ -13,7 +13,7 @@ const CourseCreation = ({ onCourseCreated, courseToEdit, onClose }) => {
   useEffect(() => {
     const fetchPdfs = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/pdf/list-pdfs');
+        const response = await fetch('http://13.51.106.41:3001/api/pdf/list-pdfs');
         const data = await response.json();
         setAvailablePdfs(data);
       } catch (error) {
@@ -35,8 +35,8 @@ const CourseCreation = ({ onCourseCreated, courseToEdit, onClose }) => {
 
     try {
       const endpoint = courseToEdit
-        ? `http://localhost:3001/api/course/update-course/${courseToEdit._id}`
-        : 'http://localhost:3001/api/course/create-course';
+        ? `http://13.51.106.41:3001/api/course/update-course/${courseToEdit._id}`
+        : 'http://13.51.106.41:3001/api/course/create-course';
 
       const response = await fetch(endpoint, {
         method: courseToEdit ? 'PUT' : 'POST',

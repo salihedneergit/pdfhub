@@ -28,12 +28,12 @@ const PdfViewer = ({ pdfKey }) => {
         const loadPdf = async () => {
             try {
                 const { data: urlData } = await axios.get(
-                    `http://localhost:3001/api/pdf/view-pdf?key=${pdfKey}`,
+                    `http://13.51.106.41:3001/api/pdf/view-pdf?key=${pdfKey}`,
                     { headers: { 'x-custom-auth': 'MY_SECRET_HEADER_KEY' } }
                 );
 
                 const response = await axios.get(
-                    `http://localhost:3001/api/pdf/proxy-pdf?url=${encodeURIComponent(urlData.url)}`,
+                    `http://13.51.106.41:3001/api/pdf/proxy-pdf?url=${encodeURIComponent(urlData.url)}`,
                     {
                         responseType: 'arraybuffer',
                         headers: { 'x-custom-auth': 'MY_SECRET_HEADER_KEY' },

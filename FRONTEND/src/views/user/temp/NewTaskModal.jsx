@@ -74,7 +74,7 @@ const NewTaskModal = ({ onClose, onSave, defaultCategory }) => {
     };
 
     try {
-      const response = await axios.post(`http://localhost:3001/api/users/${userId}/todos`, newTask);
+      const response = await axios.post(`http://13.51.106.41:3001/api/users/${userId}/todos`, newTask);
       onSave(response.data); 
       toast.success('Task created successfully');
       onClose();

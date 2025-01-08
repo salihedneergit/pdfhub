@@ -22,7 +22,7 @@ const TaskItem = ({ todo, isCompact, onToggleComplete, onEdit, onDelete }) => {
   const handleToggleComplete = async () => {
     try {
       const updatedTask = { ...todo, completed: !todo.completed };
-      await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, updatedTask);
+      await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, updatedTask);
       onToggleComplete(todo.id); // Update UI state
       toast.success('Task status updated');
     } catch (error) {
@@ -33,7 +33,7 @@ const TaskItem = ({ todo, isCompact, onToggleComplete, onEdit, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`);
+      await axios.delete(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`);
       onDelete(todo.id); // Update UI state
       toast.success('Task deleted successfully');
     } catch (error) {

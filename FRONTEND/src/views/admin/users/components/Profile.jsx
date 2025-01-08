@@ -15,7 +15,7 @@ const Profile = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/users/${userId}/details`
+          `http://13.51.106.41:3001/api/users/${userId}/details`
         );
         setUserData(response.data.user);
       } catch (error) {

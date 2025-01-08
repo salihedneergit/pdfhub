@@ -25,7 +25,7 @@ const CourseManagement = () => {
   const fetchCourses = async () => {
     try {
       setError(null);
-      const response = await fetch('http://localhost:3001/api/course/courses');
+      const response = await fetch('http://13.51.106.41:3001/api/course/courses');
       if (!response.ok) {
         throw new Error('Failed to fetch courses');
       }
@@ -71,7 +71,7 @@ const CourseManagement = () => {
 
   const handleDeleteCourse = async (courseId) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/course/delete-course/${courseId}`, {
+      const response = await fetch(`http://13.51.106.41:3001/api/course/delete-course/${courseId}`, {
         method: 'DELETE',
       });
 

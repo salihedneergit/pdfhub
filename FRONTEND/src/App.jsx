@@ -33,7 +33,7 @@ const SessionContext = createContext();
     }
 
     try {
-      const response = await fetch("http://localhost:3001/api/auth/session-check", {
+      const response = await fetch("http://13.51.106.41:3001/api/auth/session-check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

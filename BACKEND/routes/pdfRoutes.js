@@ -85,7 +85,7 @@ router.get('/proxy-pdf', async (req, res) => {
         // Set appropriate headers
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', 'inline');
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+        res.setHeader('Access-Control-Allow-Origin', 'http://13.51.106.41:3001');
         res.setHeader('Access-Control-Allow-Headers', 'x-custom-auth');
 
         // Send the PDF data

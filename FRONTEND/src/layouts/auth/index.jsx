@@ -26,7 +26,7 @@ export default function Auth() {
   const startSessionCheck = (userId, deviceId) => {
     const intervalId = setInterval(async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/auth/session-check', {
+        const response = await fetch('http://13.51.106.41:3001/api/auth/session-check', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId, deviceId }),
@@ -99,7 +99,7 @@ export default function Auth() {
   //       // Gather device info
   //       const deviceInfo = getDeviceInfo();
   //       // Send to your backend
-  //       const res = await fetch('http://localhost:3001/api/auth/google', {
+  //       const res = await fetch('http://13.51.106.41:3001/api/auth/google', {
   //         method: 'POST',
   //         headers: { 'Content-Type': 'application/json' },
   //         body: JSON.stringify({
@@ -208,7 +208,7 @@ export default function Auth() {
         const deviceInfo = getDeviceInfo();
   
         // Authenticate with backend
-        const authResponse = await fetch('http://localhost:3001/api/auth/google', {
+        const authResponse = await fetch('http://13.51.106.41:3001/api/auth/google', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -395,11 +395,11 @@ export default function Auth() {
                       <div className="text-center space-y-4">
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           By signing in, you agree to our{' '}
-                          <a href="http://localhost:3001/terms" className="text-[#4318FF] hover:text-[#9f87ff] transition-colors duration-300">
+                          <a href="http://13.51.106.41:3001/terms" className="text-[#4318FF] hover:text-[#9f87ff] transition-colors duration-300">
                             Terms of Service
                           </a>{' '}
                           and{' '}
-                          <a href="http://localhost:3001/privacy" className="text-[#4318FF] hover:text-[#9f87ff] transition-colors duration-300">
+                          <a href="http://13.51.106.41:3001/privacy" className="text-[#4318FF] hover:text-[#9f87ff] transition-colors duration-300">
                             Privacy Policy
                           </a>
                         </p>

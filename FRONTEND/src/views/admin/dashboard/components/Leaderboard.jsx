@@ -12,7 +12,7 @@ const Leaderboard = () => {
     const fetchLeaderboard = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3001/api/users/leaderboard/time"
+          "http://13.51.106.41:3001/api/users/leaderboard/time"
         );
         if (response.data.success) {
           setLeaderboard(response.data.leaderboard);

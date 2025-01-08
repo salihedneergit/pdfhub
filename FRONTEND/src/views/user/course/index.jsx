@@ -14,7 +14,7 @@ const Courses = () => {
       const userId = user?._id;
 
       try {
-        const response = await fetch(`http://localhost:3001/api/course/user-courses/${userId}`);
+        const response = await fetch(`http://13.51.106.41:3001/api/course/user-courses/${userId}`);
         const data = await response.json();
 
         if (data.success) {

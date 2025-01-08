@@ -133,7 +133,7 @@ const TodoApp = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/users/${userId}/todos`
+        `http://13.51.106.41:3001/api/users/${userId}/todos`
       );
       setTodos(response.data);
     } catch (error) {
@@ -163,7 +163,7 @@ const TodoApp = () => {
 
   // const handleNewTask = async (taskData) => {
   //   try {
-  //     const response = await axios.post(`http://localhost:3001/api/users/${userId}/todos`, taskData);
+  //     const response = await axios.post(`http://13.51.106.41:3001/api/users/${userId}/todos`, taskData);
   //     setTodos((prev) => [response.data, ...prev]);
   //     toast.success('Task created successfully');
   //     fetchTodos();
@@ -177,7 +177,7 @@ const TodoApp = () => {
   const handleNewTask = async (taskData) => {
     try {
       const response = await axios.post(
-        `http://localhost:3001/api/users/${userId}/todos`,
+        `http://13.51.106.41:3001/api/users/${userId}/todos`,
         taskData
       );
 
@@ -197,7 +197,7 @@ const TodoApp = () => {
     try {
       // Send the updated fields to the backend
       const response = await axios.put(
-        `http://localhost:3001/api/users/${userId}/todos/${taskId}`,
+        `http://13.51.106.41:3001/api/users/${userId}/todos/${taskId}`,
         updates
       );
 
@@ -221,7 +221,7 @@ const TodoApp = () => {
   const handleDeleteTask = async (taskId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/users/${userId}/todos/${taskId}`
+        `http://13.51.106.41:3001/api/users/${userId}/todos/${taskId}`
       );
 
       if (response.status === 200) {
@@ -241,7 +241,7 @@ const TodoApp = () => {
   //   try {
   //     const task = todos.find(todo => todo.id === taskId);
   //     const updatedTask = { ...task, completed: !task.completed };
-  //     await axios.put(`http://localhost:3001/api/users/${userId}/todos/${taskId}`, updatedTask);
+  //     await axios.put(`http://13.51.106.41:3001/api/users/${userId}/todos/${taskId}`, updatedTask);
   //     setTodos(prev =>
   //       prev.map(todo =>
   //         todo.id === taskId
@@ -270,7 +270,7 @@ const TodoApp = () => {
 
       // Send the update to the backend
       const response = await axios.put(
-        `http://localhost:3001/api/users/${userId}/todos/${taskId}`,
+        `http://13.51.106.41:3001/api/users/${userId}/todos/${taskId}`,
         updatedTask
       );
 

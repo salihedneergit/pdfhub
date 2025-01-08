@@ -16,7 +16,7 @@ export default function TopCards() {
       const user = JSON.parse(localStorage.getItem("user"));
       if (!user || !user._id) return;
 
-      fetch(`http://localhost:3001/api/users/${user._id}/sections/time`)
+      fetch(`http://13.51.106.41:3001/api/users/${user._id}/sections/time`)
         .then((res) => res.json())
         .then((json) => {
           if (json?.success && json?.data) {

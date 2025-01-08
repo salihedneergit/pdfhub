@@ -134,7 +134,7 @@ const UploadPdfManager = () => {
   const loadPdf = async (key) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/api/pdf/view-pdf?key=${key}`,
+        `http://13.51.106.41:3001/api/pdf/view-pdf?key=${key}`,
         {
           headers: { "x-custom-auth": "MY_SECRET_HEADER_KEY" },
         }
@@ -149,7 +149,7 @@ const UploadPdfManager = () => {
   // DELETE PDF
   const deletePdf = async (key) => {
     try {
-      await axios.delete(`http://localhost:3001/api/pdf/delete-pdf?key=${key}`, {
+      await axios.delete(`http://13.51.106.41:3001/api/pdf/delete-pdf?key=${key}`, {
         headers: { "x-custom-auth": "MY_SECRET_HEADER_KEY" },
       });
       fetchPdfs();
@@ -168,7 +168,7 @@ const UploadPdfManager = () => {
   // Fetch existing PDFs
   const fetchPdfs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3001/api/pdf/list-pdfs");
+      const { data } = await axios.get("http://13.51.106.41:3001/api/pdf/list-pdfs");
       setPdfList(data);
       setLoading(false);
     } catch (error) {
@@ -220,7 +220,7 @@ const UploadPdfManager = () => {
     setUploadComplete(false);
 
     try {
-      await axios.post("http://localhost:3001/api/pdf/upload-pdf", formData, {
+      await axios.post("http://13.51.106.41:3001/api/pdf/upload-pdf", formData, {
         onUploadProgress: (progressEvent) => {
           const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
           setUploadProgress(percent);

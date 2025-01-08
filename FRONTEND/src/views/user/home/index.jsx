@@ -150,7 +150,7 @@ function Dashboard() {
   const fetchStreak = async (userId) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/${userId}/streak`
+        `http://13.51.106.41:3001/api/users/${userId}/streak`
       );
       const data = await response.json();
       if (data.success && data.streak) {
@@ -167,7 +167,7 @@ function Dashboard() {
   const handleLogout = async () => {
     try {
       const userData = JSON.parse(localStorage.getItem("user"));
-      const response = await fetch("http://localhost:3001/api/auth/logout", {
+      const response = await fetch("http://13.51.106.41:3001/api/auth/logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

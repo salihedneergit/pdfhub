@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 // Initialize the WebSocket connection
-const socket = io("http://localhost:3001");
+const socket = io("http://13.51.106.41:3001");
 
 export const trackPageTime = (userId, page, pageId) => {
   // Emit `joinPage` when a user navigates to a page

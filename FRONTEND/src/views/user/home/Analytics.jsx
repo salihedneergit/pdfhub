@@ -67,9 +67,9 @@ function AnalyticsSection() {
       const userData = JSON.parse(localStorage.getItem('user'));
       const userId = userData?._id;
       const endpoints = [
-        `http://localhost:3001/api/users/${userId}/courses/time`,
-        `http://localhost:3001/api/users/${userId}/todos/time`,
-        `http://localhost:3001/api/users/${userId}/pomodoro/time`
+        `http://13.51.106.41:3001/api/users/${userId}/courses/time`,
+        `http://13.51.106.41:3001/api/users/${userId}/todos/time`,
+        `http://13.51.106.41:3001/api/users/${userId}/pomodoro/time`
       ];
 
       const responses = await Promise.all(endpoints.map(url => fetch(url)));

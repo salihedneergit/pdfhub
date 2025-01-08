@@ -23,7 +23,7 @@ const CourseDetails = () => {
     const fetchCourseDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/course/user-courses/${userId}`
+          `http://13.51.106.41:3001/api/course/user-courses/${userId}`
         );
         const data = await response.json();
         if (data.success) {

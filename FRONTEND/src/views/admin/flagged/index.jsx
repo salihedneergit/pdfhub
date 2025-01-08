@@ -11,7 +11,7 @@ const FlaggedUsers = () => {
   useEffect(() => {
     const fetchFlaggedUsers = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/flagged/flagged-users");
+        const response = await fetch("http://13.51.106.41:3001/api/flagged/flagged-users");
         const data = await response.json();
 
         if (data.success) {
@@ -31,7 +31,7 @@ const FlaggedUsers = () => {
 
   const generatePDF = async (user) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/users/${user._id}/details`);
+      const response = await fetch(`http://13.51.106.41:3001/api/users/${user._id}/details`);
       const userDetails = await response.json();
   
       if (userDetails.success) {

@@ -163,23 +163,23 @@ const AdminDashboard = () => {
     const fetchDashboardData = async () => {
       try {
         // 1) Main Stats
-        const statsResponse = await axios.get("http://localhost:3001/api/dashboard/stats");
+        const statsResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/stats");
         // 2) Top Users
-        const topUsersResponse = await axios.get("http://localhost:3001/api/dashboard/top-users");
+        const topUsersResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/top-users");
         // 3) Top Courses
-        const topCoursesResponse = await axios.get("http://localhost:3001/api/dashboard/top-courses");
+        const topCoursesResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/top-courses");
         // 4) Active/Inactive Users
-        const activeInactiveResponse = await axios.get("http://localhost:3001/api/dashboard/active-inactive");
+        const activeInactiveResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/active-inactive");
         // 5) Expiring Subscriptions
-        const expiringSubscriptionsResponse = await axios.get("http://localhost:3001/api/dashboard/expiring-subscriptions");
+        const expiringSubscriptionsResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/expiring-subscriptions");
         // 6) Login Stats
-        const loginStatsResponse = await axios.get("http://localhost:3001/api/dashboard/login-stats");
+        const loginStatsResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/login-stats");
         // 7) Monthly Progress (real data)
-        const monthlyProgressResponse = await axios.get("http://localhost:3001/api/dashboard/monthly-progress");
+        const monthlyProgressResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/monthly-progress");
         // 8) Weekly Progress (real data)
-        const weeklyProgressResponse = await axios.get("http://localhost:3001/api/dashboard/weekly-progress");
+        const weeklyProgressResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/weekly-progress");
         // 9) yearly progress (real data)
-        const yearlyProgressResponse = await axios.get("http://localhost:3001/api/dashboard/yearly-overview");
+        const yearlyProgressResponse = await axios.get("http://13.51.106.41:3001/api/dashboard/yearly-overview");
 
 
 
@@ -214,7 +214,7 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     try {
       const userData = JSON.parse(localStorage.getItem('user'));
-      const response = await fetch('http://localhost:3001/api/auth/logout', {
+      const response = await fetch('http://13.51.106.41:3001/api/auth/logout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: userData._id, deviceId: userData.deviceId }),

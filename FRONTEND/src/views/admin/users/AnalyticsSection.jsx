@@ -21,7 +21,7 @@ function AnalyticsSection() {
 
 const fetchUserDetails = async () => {
   try {
-    const response = await fetch(`http://localhost:3001/api/users/${userId}/details`);
+    const response = await fetch(`http://13.51.106.41:3001/api/users/${userId}/details`);
     const data = await response.json();
     if (data.success) setUserDetails(data.user);
   } catch (error) {
@@ -65,9 +65,9 @@ useEffect(() => {
     setLoading(true);
     try {
       const endpoints = [
-        `http://localhost:3001/api/users/${userId}/courses/time`,
-        `http://localhost:3001/api/users/${userId}/todos/time`,
-        `http://localhost:3001/api/users/${userId}/pomodoro/time`
+        `http://13.51.106.41:3001/api/users/${userId}/courses/time`,
+        `http://13.51.106.41:3001/api/users/${userId}/todos/time`,
+        `http://13.51.106.41:3001/api/users/${userId}/pomodoro/time`
       ];
 
       const responses = await Promise.all(endpoints.map(url => fetch(url)));

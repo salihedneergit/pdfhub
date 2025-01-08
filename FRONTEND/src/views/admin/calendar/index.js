@@ -15,7 +15,7 @@ const SubscriptionCalendar = () => {
   // Fetch subscription data
   const fetchSubscriptionData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/users/subscriptions");
+      const response = await axios.get("http://13.51.106.41:3001/api/users/subscriptions");
       const { users } = response.data;
   
       // Map user data to FullCalendar events

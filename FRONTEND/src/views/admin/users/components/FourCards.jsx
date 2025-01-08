@@ -16,7 +16,7 @@ export default function FourCards() {
 
   useEffect(() => {
     try {
-      fetch(`http://localhost:3001/api/users/${userId}/sections/time`)
+      fetch(`http://13.51.106.41:3001/api/users/${userId}/sections/time`)
         .then((res) => res.json())
         .then((json) => {
           if (json?.success && json?.data) {

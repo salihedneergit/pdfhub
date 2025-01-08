@@ -20,7 +20,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
 
   const handlePriorityChange = async (priority) => {
     try {
-      await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { priority });
+      await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { priority });
       onUpdate(todo.id, { priority });
       toast.success('Priority updated successfully');
     } catch (error) {
@@ -31,7 +31,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
 
   const handleDateSelect = async (date) => {
     try {
-      await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { dueDate: date });
+      await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { dueDate: date });
       onUpdate(todo.id, { dueDate: date });
       toast.success('Due date updated successfully');
     } catch (error) {
@@ -43,7 +43,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
   const handleRepeatToggle = async () => {
     try {
       const updatedRepeating = !todo.repeating;
-      await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { repeating: updatedRepeating });
+      await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { repeating: updatedRepeating });
       onUpdate(todo.id, { repeating: updatedRepeating });
       toast.success('Repeat status updated successfully');
     } catch (error) {
@@ -56,7 +56,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
     if (newSubtask.trim()) {
       try {
         const updatedSubtasks = [...todo.subtasks, { id: Date.now(), text: newSubtask, completed: false }];
-        await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
+        await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
         onAddSubtask(todo.id, newSubtask);
         setNewSubtask('');
         toast.success('Subtask added successfully');
@@ -69,7 +69,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
 
   const handleNotesUpdate = async () => {
     try {
-      await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { notes });
+      await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { notes });
       onUpdate(todo.id, { notes });
       toast.success('Notes updated successfully');
     } catch (error) {
@@ -103,7 +103,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
                 onBlur={async (e) => {
                   try {
                     const updatedText = e.target.value;
-                    await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { text: updatedText });
+                    await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { text: updatedText });
                     onUpdate(todo.id, { text: updatedText });
                     toast.success('Task updated successfully');
                   } catch (error) {
@@ -197,7 +197,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
                             const updatedSubtasks = todo.subtasks.map(st =>
                               st.id === subtask.id ? { ...st, completed: !st.completed } : st
                             );
-                            await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
+                            await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
                             onUpdate(todo.id, { subtasks: updatedSubtasks });
                             toast.success('Subtask updated successfully');
                           } catch (error) {
@@ -214,7 +214,7 @@ const TodoDetailModal = ({ todo, onClose, onUpdate, onDelete, onAddSubtask }) =>
                         onClick={async () => {
                           try {
                             const updatedSubtasks = todo.subtasks.filter(st => st.id !== subtask.id);
-                            await axios.put(`http://localhost:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
+                            await axios.put(`http://13.51.106.41:3001/api/users/${todo.userId}/todos/${todo.id}`, { subtasks: updatedSubtasks });
                             onUpdate(todo.id, { subtasks: updatedSubtasks });
                             toast.success('Subtask deleted successfully');
                           } catch (error) {

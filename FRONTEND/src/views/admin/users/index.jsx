@@ -50,7 +50,7 @@ function UserTable() {
   const openAnalyticsModal = (userId) => {
     setSelectedUserId(userId);
     // setShowAnalytics(true); 
-    window.location.assign(`http://localhost:3001/admin/users/${userId}`);
+    window.location.assign(`http://13.51.106.41:3001/admin/users/${userId}`);
   };
 
   // Function to close the analytics modal
@@ -72,7 +72,7 @@ function UserTable() {
   const generatePDF = async (user) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/${user._id}/details`
+        `http://13.51.106.41:3001/api/users/${user._id}/details`
       );
       const userDetails = await response.json();
 
@@ -143,7 +143,7 @@ function UserTable() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/users");
+        const response = await fetch("http://13.51.106.41:3001/api/users");
         const data = await response.json();
         if (data.success) {
           setUsers(data.users);
@@ -166,7 +166,7 @@ function UserTable() {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/api/course/courses"
+          "http://13.51.106.41:3001/api/course/courses"
         );
         const data = await response.json();
         if (data.courses && Array.isArray(data.courses)) {
@@ -232,7 +232,7 @@ function UserTable() {
     setIsModalOpen(true);
   
     try {
-      const response = await fetch(`http://localhost:3001/api/usersDetails/${userId}`);
+      const response = await fetch(`http://13.51.106.41:3001/api/usersDetails/${userId}`);
       const data = await response.json();
   
       if (data.success && data.user) {
@@ -277,7 +277,7 @@ function UserTable() {
   
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/${currentUserId}/status`,
+        `http://13.51.106.41:3001/api/users/${currentUserId}/status`,
         {
           method: "PATCH",
           headers: {
@@ -325,7 +325,7 @@ function UserTable() {
     }
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/${userId}/status`,
+        `http://13.51.106.41:3001/api/users/${userId}/status`,
         {
           method: "PATCH",
           headers: {
@@ -360,7 +360,7 @@ function UserTable() {
 
     try {
       const response = await fetch(
-        `http://localhost:3001/api/users/${userId}`,
+        `http://13.51.106.41:3001/api/users/${userId}`,
         {
           method: "DELETE",
         }

@@ -44,7 +44,7 @@ const EditTaskModal = ({ task, onClose, onSave, onDelete }) => {
         priority,
       };
 
-      await axios.put(`http://localhost:3001/api/users/${task.userId}/todos/${task.id}`, updatedTask);
+      await axios.put(`http://13.51.106.41:3001/api/users/${task.userId}/todos/${task.id}`, updatedTask);
       onSave(task.id, updatedTask); // Update the state in the parent component
       onClose();
     } catch (error) {
@@ -54,7 +54,7 @@ const EditTaskModal = ({ task, onClose, onSave, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/api/users/${task.userId}/todos/${task.id}`);
+      await axios.delete(`http://13.51.106.41:3001/api/users/${task.userId}/todos/${task.id}`);
       onDelete(task.id); // Update the state in the parent component
       onClose();
     } catch (error) {

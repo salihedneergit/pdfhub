@@ -22,7 +22,7 @@
 
 //         console.log('Google User Info:', userInfo);
 
-//         const res = await fetch('http://localhost:3001/api/auth/google', {
+//         const res = await fetch('http://13.51.106.41:3001/api/auth/google', {
 //           method: 'POST',
 //           headers: { 'Content-Type': 'application/json' },
 //           body: JSON.stringify({
