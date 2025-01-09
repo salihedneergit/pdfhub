@@ -1,8 +1,8 @@
+give me build code 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const path = require('path'); // Import path for serving static files
 const { createServer } = require('http'); // Import HTTP server
 const initializeWebSocket = require('./utils/websocket');
 const authRoutes = require('./routes/authRoutes');
@@ -22,10 +22,6 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Serve the React build folder
-const buildPath = path.join(__dirname, 'frontend', 'build'); // Path updated for frontend/build
-app.use(express.static(buildPath));
-
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', userRoutes);
@@ -34,11 +30,6 @@ app.use('/api/course', courseRoutes);
 app.use('/api/users', todo);
 app.use('/api', dashboard);
 app.use('/api/flagged', flaggedUsers);
-
-// Handle React routing, return index.html for all non-API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(buildPath, 'index.html'));
-});
 
 // Create HTTP server and initialize WebSocket
 const server = createServer(app); // Use HTTP server

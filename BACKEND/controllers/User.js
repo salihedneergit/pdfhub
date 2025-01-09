@@ -651,7 +651,7 @@ const getTotalTimeBySections = async (req, res) => {
       const dates = Object.keys(avgTimeBySection[section]);
       const totalDays = dates.length;
       const totalMinutes = totalTimeBySection[section];
-
+      
       const dailyAvg = totalDays > 0 ? totalMinutes / totalDays : 0;
 
       // Weekly Average
